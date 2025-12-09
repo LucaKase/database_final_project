@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Customer Total Lesson Revenue</title>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Customer Total Lesson Revenue</h1>
+
+    <form method="post">
+        <label>First Name:</label>
+        <input type="text" name="firstName" required>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required>
+
+        <button type="submit">Get Total Revenue</button>
+    </form>
+
+    <hr>
+
+    {% if result %}
+    <div class="result-box">
+        <h2>Result:</h2>
+
+        {% if result.total_revenue %}
+            <p>Total Revenue for {{ first_name }} {{ last_name }}: 
+                <strong>€{{ result.total_revenue }}</strong>
+            </p>
+        {% else %}
+            <p>No lessons found for {{ first_name }} {{ last_name }}.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <a class="back-btn" href="/">Back to Homepage</a>
+
+</div>
+</body>
+</html>

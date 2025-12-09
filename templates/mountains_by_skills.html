@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mountains by Skill Level</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Mountains by Skill Level</h1>
+
+    <div class="card">
+        <form method="post">
+            <div class="form-group">
+                <label>Select Skill Level:</label>
+                <select name="skillLevel" required>
+                    {% for level in skill_levels %}
+                        <option value="{{ level }}">{{ level }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Search Mountains</button>
+        </form>
+    </div>
+
+    <hr>
+
+    {% if results %}
+        <h2 class="section-title">Results</h2>
+        <div class="table-card">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Mountain Name</th>
+                        <th>Height</th>
+                        <th>Skill Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.height }}</td>
+                        <td>{{ row.skill_level }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif results is not none %}
+        <p class="no-results">No mountains found.</p>
+    {% endif %}
+
+    <a href="/" class="btn-secondary back-btn">← Back to Homepage</a>
+
+</div>
+
+</body>
+</html>

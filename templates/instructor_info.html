@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructor Salary</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+
+    <h1>Instructor Salary</h1>
+
+    <form method="post">
+        <label>First Name:</label>
+        <input type="text" name="firstName" required>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required>
+
+        <button type="submit">Search Instructor</button>
+    </form>
+
+    <hr>
+
+    {% if result %}
+    <div class="result-box">
+        <h2>Results:</h2>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                    <th>Years of Experience</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in result %}
+                <tr>
+                    <td>{{ row.firstName }}</td>
+                    <td>{{ row.lastName }}</td>
+                    <td>{{ row.salary }}</td>
+                    <td>{{ row.yearsExperience }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% elif result is not none %}
+        <p>No instructor found.</p>
+    {% endif %}
+
+    <a class="back-btn" href="/">Back to Homepage</a>
+
+</div>
+</body>
+</html>

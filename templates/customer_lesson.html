@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Lessons</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Customer Lessons</h1>
+
+        <form method="post">
+            <label>Customer First Name:</label>
+            <input type="text" name="firstName" required>
+
+            <label>Customer Last Name:</label>
+            <input type="text" name="lastName" required>
+
+            <label>Date (optional, YYYY-MM-DD):</label>
+            <input type="text" name="date">
+
+            <button type="submit">Suche Lessons</button>
+        </form>
+
+        <hr>
+
+        {% if results %}
+        <div class="result-box">
+            <h2>Output:</h2>
+
+            <table class="styled-table">
+                <tr>
+                    <th>Mountain Name</th>
+                    <th>Date</th>
+                </tr>
+                {% for row in results %}
+                <tr>
+                    <td>{{ row.mountain_name }}</td>
+                    <td>{{ row.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% elif results is not none %}
+        <div class="result-box">
+            <p>No lessons found.</p>
+        </div>
+        {% endif %}
+
+        <div class="back-btn">
+            <a href="/">Back to Homepage</a>
+        </div>
+
+    </div>
+</body>
+</html>

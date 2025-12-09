@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Group Size</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>Group Size for Lessons</h1>
+
+    <form method="post">
+        <label>Skill Level:</label>
+        <input type="text" name="skillLevel" required>
+
+        <label>Date (YYYY-MM-DD):</label>
+        <input type="text" name="date" required>
+
+        <button type="submit">Check Group Size</button>
+    </form>
+
+    <hr>
+
+    {% if results %}
+        <h2>Results:</h2>
+
+        <div class="result-box">
+            <table class="styled-table">
+                <tr>
+                    <th>Group Size</th>
+                </tr>
+                {% for row in results %}
+                <tr>
+                    <td>{{ row.group_size }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    {% elif results is not none %}
+        <div class="result-box">
+            <p>No groups found for this skill level and date.</p>
+        </div>
+    {% endif %}
+
+    <a href="/" class="back-link">Back to Homepage</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-size: 26px;
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #1a73e8;
+    box-shadow: 0px 0px 4px rgba(26,115,232,0.4);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #155fc4;
+}
+
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e2e2e2;
+}
+
+.result-box {
+    background: #f0f6ff;
+    border-left: 4px solid #1a73e8;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+table th {
+    background: #1a73e8;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+table td {
+    padding: 14px;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tr:hover td {
+    background: #eef4ff;
+}
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 15px;
+    background: white;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: left;
+}
+
+.styled-table th {
+    background: #1a73e8;
+    font-weight: 600;
+}
+
+.styled-table tr:hover td {
+    background: #f5f9ff;
+}
+
+.back-btn-space {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+}
